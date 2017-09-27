@@ -10,7 +10,7 @@ void setup()
 }   
 void draw()   
 { 
-  background(255);
+  background(0);
   for (int i=0; i<gidgets.length; i++) 
   {   
     gidgets[i].show();
@@ -27,8 +27,8 @@ class Bacteria
   }
   void move()
   {
-    myX = myX + (int)(Math.random()*21)-10;
-    myY = myY + (int)(Math.random()*21)-10;
+    myX = myX + (int)(Math.random()*41)-20;
+    myY = myY + (int)(Math.random()*41)-20;
     if (mouseX > myX) 
     {
       myX = myX + (int)(Math.random()*21)-5;
@@ -48,7 +48,8 @@ class Bacteria
     }
     void show()
   {
-    fill(myX/2.35, 255-myY/2.35, (myX + myY)/4.71);
-    ellipse(myX, myY, 20, 20);
+    noStroke();
+    fill(myX/2.35, 255-myY/2.35, (myX + myY)/4.71, myX);
+    ellipse(myX, myY, 10, 10);
   }
 }    
