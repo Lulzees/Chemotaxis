@@ -19,11 +19,12 @@ void draw()
 }  
 class Bacteria
 {
-  int myX, myY;     
+  int myX, myY, l, w;     
   Bacteria()
   {
     myX = 300;
     myY = 300;
+    l = w = 20;
   }
   void move()
   {
@@ -45,11 +46,13 @@ class Bacteria
     {
       myY = myY + (int)(Math.random()*21)-15;
     }
+    l = (int)(Math.random()*20)+5;
+    w = (int)(Math.random()*20)+5;
     }
     void show()
   {
     noStroke();
-    fill(myX/2.35, 255-myY/2.35, (myX + myY)/4.71, myX);
-    ellipse(myX, myY, 10, 10);
+    fill(myX/2.35, 255-myY/2.35, (myX + myY)/4.71, myX/2);
+    ellipse(myX, myY, l, w);
   }
 }    
